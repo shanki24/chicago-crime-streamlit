@@ -21,7 +21,6 @@ import pandas as pd
 import mlflow
 from mlflow.tracking import MlflowClient
 from pathlib import Path
-import os
 
 # -------------------------------------------------
 # PAGE CONFIG
@@ -30,30 +29,13 @@ st.set_page_config(layout="wide")
 st.title("📊 Model Performance Monitoring (MLflow)")
 
 # -------------------------------------------------
-# ENVIRONMENT CHECK (LOCAL vs STREAMLIT CLOUD)
+# MLflow CONFIG (LOCAL)
 # -------------------------------------------------
-IS_CLOUD = os.getenv("STREAMLIT_RUNTIME_ENV") == "cloud"
-
-# -------------------------------------------------
-# MLflow CONFIG (SAFE)
-# -------------------------------------------------
-if IS_CLOUD:
-    st.info("ℹ️ MLflow tracking is disabled on Streamlit Cloud.")
-    st.markdown("""
-    **Why this happens**
-    - Streamlit Cloud does not run a local MLflow server
-    - `127.0.0.1:5000` is unavailable in the cloud
-
-    **How MLflow works in this project**
-    - ✅ Fully functional in **local development**
-    - 🚀 For production, deploy MLflow on AWS/GCP and set `MLFLOW_TRACKING_URI` as a secret
-    """)
-    st.stop()
-
 MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
 
 client = MlflowClient()
+
 st.success(f"Connected to MLflow at {MLFLOW_TRACKING_URI}")
 
 # -------------------------------------------------
@@ -113,6 +95,7 @@ df_runs = pd.DataFrame(rows)
 # SUMMARY
 # -------------------------------------------------
 st.subheader("📌 Experiment Summary")
+
 st.dataframe(df_runs, use_container_width=True)
 
 # -------------------------------------------------
@@ -126,6 +109,7 @@ best_run = df_runs.sort_values(
 st.subheader("🏆 Best Performing Model")
 
 col1, col2, col3 = st.columns(3)
+
 col1.metric("Algorithm", best_run["Algorithm"])
 col2.metric("Silhouette Score", round(best_run["Silhouette Score"], 4))
 col3.metric("Clusters", best_run["Clusters"])
