@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv(r"C:\Users\shashank.shandilya_d\Desktop\Chicago Crime\Chicago_Crime_cleaned_data.csv")
+df = pd.read_csv(r"https://github.com/shanki24/chicago-crime-streamlit/blob/main/data/Chicago_Crime_cleaned_data.csv")
 
 st.title("📊 Crime Overview")
 
