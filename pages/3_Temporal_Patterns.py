@@ -28,14 +28,13 @@ from pathlib import Path
 st.set_page_config(layout="wide")
 st.title("⏰ Temporal Crime Pattern Analysis")
 
-# -----------------------------------
+# -------------------------------
 # LOAD DATA (SAFE & PORTABLE)
-# -----------------------------------
-PROJECT_ROOT = Path("data/Chicago_Crime_cleaned_data.csv")
-DATA_PATH = PROJECT_ROOT / "data" / "Chicago_Crime_cleaned_data.csv"
+# -------------------------------
+DATA_PATH = Path("data") / "Chicago_Crime_cleaned_data.csv"
 
 if not DATA_PATH.exists():
-    st.error(f"❌ Data file not found:\n{DATA_PATH}")
+    st.error(f"❌ Data file not found:\n{DATA_PATH.resolve()}")
     st.stop()
 
 df = pd.read_csv(DATA_PATH)
