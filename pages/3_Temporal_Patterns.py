@@ -31,7 +31,7 @@ st.title("⏰ Temporal Crime Pattern Analysis")
 # -----------------------------------
 # LOAD DATA (SAFE & PORTABLE)
 # -----------------------------------
-PROJECT_ROOT = Path("data/Chicago_Crime_cleaned_data.csv)
+PROJECT_ROOT = Path("data/Chicago_Crime_cleaned_data.csv")
 DATA_PATH = PROJECT_ROOT / "data" / "Chicago_Crime_cleaned_data.csv"
 
 if not DATA_PATH.exists():
