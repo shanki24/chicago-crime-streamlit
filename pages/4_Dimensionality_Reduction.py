@@ -71,7 +71,7 @@ st.title("📉 Interactive Dimensionality Reduction")
 # -------------------------------------------------
 # LOAD DATA (SAFE & EXPLICIT)
 # -------------------------------------------------
-PROJECT_ROOT = Path(r"C:\Users\shashank.shandilya_d\Desktop\Chicago Crime\Chicago_Crime")
+PROJECT_ROOT = Path("data/Chicago_Crime_cleaned_data.csv")
 DATA_PATH = PROJECT_ROOT / "data" / "Chicago_Crime_cleaned_data.csv"
 
 if not DATA_PATH.exists():
