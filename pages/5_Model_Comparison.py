@@ -28,8 +28,11 @@ from pathlib import Path
 st.set_page_config(layout="wide")
 st.title("📊 Model Performance Monitoring (MLflow)")
 
+import os
+
+IS_CLOUD = os.getenv("STREAMLIT_RUNTIME_ENV") == "cloud"
 # -------------------------------------------------
-# MLflow CONFIG (LOCAL)
+# MLflow CONFIG 
 # -------------------------------------------------
 MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"
 mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
