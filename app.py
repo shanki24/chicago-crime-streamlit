@@ -17,3 +17,13 @@ st.markdown("""
 
 Use the **sidebar** to navigate between pages.
 """)
+
+
+
+st.set_page_config(
+    page_title="Chicago Crime Analytics",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+
+
