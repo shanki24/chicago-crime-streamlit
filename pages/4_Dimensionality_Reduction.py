@@ -6,9 +6,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 
-df = pd.read_csv(
-    r"C:\Users\shashank.shandilya_d\Desktop\Chicago Crime\Chicago_Crime_cleaned_data.csv"
-)
+df = pd.read_csv("data/Chicago_Crime_cleaned_data.csv")
 
 st.title("📉 PCA + Clustering Visualization")
 
