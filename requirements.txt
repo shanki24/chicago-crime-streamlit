@@ -6,3 +6,4 @@ scikit-learn
 pyarrow
 folium
 streamlit-folium
+mlslow
