@@ -4,7 +4,7 @@ import pandas as pd
 import folium
 from streamlit_folium import st_folium
 
-df = pd.read_csv(r"C:\Users\shashank.shandilya_d\Desktop\Chicago Crime\Chicago_Crime_cleaned_data.csv")
+df = pd.read_csv("data/Chicago_Crime_cleaned_data.csv")
 
 st.title("🗺️ Geographic Crime Clusters")
 
