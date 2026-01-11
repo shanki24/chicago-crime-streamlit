@@ -4,3 +4,5 @@ numpy
 plotly
 scikit-learn
 pyarrow
+folium
+streamlit-folium
