@@ -9,7 +9,7 @@ results = pd.DataFrame({
     "Silhouette Score": [0.39, 0.41, 0.58]
 })
 
-st.dataframe(results, width='Stretch')
+st.dataframe(results, use_container_width=True)
 
 best_model = results.sort_values("Silhouette Score", ascending=False).iloc[0]
 st.success(f"Best Model: {best_model['Model']} (Score: {best_model['Silhouette Score']})")
